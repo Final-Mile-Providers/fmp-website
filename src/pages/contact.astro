@@ -24,7 +24,7 @@ import { contact, WEB3FORMS_KEY } from '../data/site.js';
         </a>
       </div>
     </div>
-    <form action="https://api.web3forms.com/submit" method="POST">
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
       <input type="hidden" name="subject" value="New inquiry from finalmileproviders.com" />
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
@@ -38,8 +38,45 @@ import { contact, WEB3FORMS_KEY } from '../data/site.js';
       </div>
       <label for="subject_line">Subject</label><input id="subject_line" name="subject_line" />
       <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
-      <button class="btn btn-red" type="submit">Send inquiry</button>
-      <p class="note">Submissions are delivered to {contact.email} via Web3Forms. Add your free access key in <code>src/data/site.js</code> before launch.</p>
+      <button id="contactSubmit" class="btn btn-red" type="submit">Send inquiry</button>
+      <p class="note" id="formResult">We respond to all inquiries within one business day.</p>
     </form>
   </div></div></section>
+  <script is:inline>
+  (function () {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    var result = document.getElementById('formResult');
+    var btn = document.getElementById('contactSubmit');
+    var defaultNote = result.textContent;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      result.textContent = 'Sending...';
+
+      var data = Object.fromEntries(new FormData(form));
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            result.textContent = 'Thank you. We received your inquiry and will respond within one business day.';
+            form.reset();
+          } else {
+            result.textContent = 'Something went wrong. Please email sales@finalmileproviders.com directly.';
+            btn.disabled = false;
+          }
+        })
+        .catch(function () {
+          result.textContent = 'Something went wrong. Please email sales@finalmileproviders.com directly.';
+          btn.disabled = false;
+        });
+    });
+  })();
+</script>
 </Base>
