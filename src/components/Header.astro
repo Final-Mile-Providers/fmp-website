@@ -1,0 +1,16 @@
+---
+import { nav } from '../data/site.js';
+const path = Astro.url.pathname;
+---
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="/img/logo-lockup.png" alt="Final Mile Providers LLC" /></a>
+    <nav class="menu" id="menu">
+      {nav.map(i => <a href={i.href} aria-current={path === i.href ? 'page' : undefined}>{i.label}</a>)}
+      <a href="/contact" class="btn btn-dark">Get a quote</a>
+    </nav>
+    <button class="burger" aria-label="Toggle menu" onclick="document.getElementById('menu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+const pillars = [
+  ["01","Client-centricity","We build lasting partnerships through bespoke solutions, exceeding expectations with unmatched reliability and service."],
+  ["02","Precise operations","We achieve operational mastery through optimized processes, ensuring shipments are delivered with speed, efficiency, and flawless execution."],
+  ["03","Technology & innovation","We leverage pioneering technologies to provide real-time visibility, streamline operations, and keep you ahead in a dynamic market."],
+  ["04","Sustainable logistics","We are committed to a greener future, implementing eco-conscious practices to minimize our footprint and enhance your sustainability profile."],
+  ["05","Empowered workforce","Our highly skilled team is our greatest asset. We invest in their development and well-being, fostering a culture of excellence."],
+  ["06","Strategic growth","We are expanding our capabilities, market presence, and strategic alliances to deliver comprehensive logistics solutions."]
+];
+---
+<Base title="Why FMP | Final Mile Providers LLC">
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow" style="color:var(--steel-lt)">Why Final Mile Providers</span>
+    <h1>We engineer the last mile</h1>
+    <p>We're not just moving packages — we're building seamless, future-forward logistics solutions designed to transform your supply chain and drive your competitive advantage.</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="pillars">
+      {pillars.map(([i,t,d]) => <div class="pillar"><div class="idx">{i}</div><h3>{t}</h3><p>{d}</p></div>)}
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap"><div class="split">
+    <div class="photo"><img src="/img/ops.jpg" alt="Warehouse and dock operations" /></div>
+    <div>
+      <span class="eyebrow">Partners in logistics</span>
+      <h2 class="disp" style="text-transform:uppercase;font-size:clamp(24px,3vw,34px);margin:14px 0 16px">Built for reliability at scale</h2>
+      <p style="color:#3d4a60">From warehouse to room-of-choice, our operating model is designed around density, data, and disciplined execution — so your customers get a consistent, on-time, damage-free experience every time.</p>
+      <a href="/contact" class="btn btn-red" style="margin-top:8px">Talk to our team</a>
+    </div>
+  </div></div></section>
+</Base>

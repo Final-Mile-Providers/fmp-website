@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { contact } from '../data/site.js';
+---
+<Base title="Privacy Policy | Final Mile Providers LLC">
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow" style="color:var(--steel-lt)">Legal</span>
+    <h1>Privacy Policy</h1>
+  </div></section>
+  <section><div class="wrap prose">
+    <p>Final Mile Providers LLC ("FMP," "we," "us") respects your privacy. This policy explains what information we collect through this website and how we use it.</p>
+    <p><strong>Information we collect.</strong> When you submit our contact form, we collect the details you provide — such as your name, email, phone, company, and message — so we can respond to your inquiry.</p>
+    <p><strong>How we use it.</strong> We use your information solely to respond to your request and communicate with you about our services. We do not sell your personal information.</p>
+    <p><strong>Data retention.</strong> We retain inquiry information only as long as needed to respond and maintain our business records.</p>
+    <p><strong>Contact.</strong> For any privacy questions or to request removal of your information, email <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
+    <p style="color:var(--steel);font-size:13px">This is a general template. Have counsel review before publishing to confirm it meets your obligations.</p>
+  </div></section>
+</Base>

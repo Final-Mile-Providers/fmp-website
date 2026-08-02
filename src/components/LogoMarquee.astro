@@ -1,0 +1,14 @@
+---
+import { brands } from '../data/site.js';
+const loop = [...brands, ...brands]; // duplicate for seamless scroll
+---
+<div class="marquee-sec">
+  <p class="marquee-head">Years of experience delivering for leading retail brands</p>
+  <div class="marquee">
+    <div class="track">
+      {loop.map(b => (
+        <div class="chip"><img src={`/img/logos/${b.file}`} alt={b.name} loading="lazy" /></div>
+      ))}
+    </div>
+  </div>
+</div>

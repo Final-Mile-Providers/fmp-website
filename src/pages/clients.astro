@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { brands } from '../data/site.js';
+---
+<Base title="Our clients | Final Mile Providers LLC">
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow" style="color:var(--steel-lt)">Our clients</span>
+    <h1>Trusted with leading retail brands</h1>
+    <p>Our management team and dedicated contractors have years of experience delivering for many of the most recognized names in furniture and big-and-bulky retail.</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="client-grid">
+      {brands.map(b => (
+        <div class="client-cell"><img src={`/img/logos/${b.file}`} alt={b.name} loading="lazy" /></div>
+      ))}
+    </div>
+  </div></section>
+</Base>

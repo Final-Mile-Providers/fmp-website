@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+const pillars = [
+  ["01","Client-centricity","Lasting partnerships through bespoke solutions, exceeding expectations with unmatched reliability."],
+  ["02","Precise operations","Operational mastery through optimized processes — delivered with speed, efficiency, and flawless execution."],
+  ["03","Technology & innovation","Pioneering tools for real-time visibility that streamline operations and keep you ahead."],
+  ["04","Sustainable logistics","Eco-conscious practices that minimize footprint and strengthen your sustainability profile."],
+  ["05","Empowered workforce","Skilled crews are our greatest asset. We invest in their development and a culture of excellence."],
+  ["06","Strategic growth","Expanding capabilities, market presence, and alliances to deliver comprehensive solutions."]
+];
+---
+<Base title="Final Mile Providers LLC — Delivering Excellence, Every Mile">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Non-asset last-mile · furniture &amp; big-and-bulky</span>
+        <h1>Delivering excellence,<br />every mile
+          <span class="thin">A last-mile delivery partner built by senior logistics operators — fast, flexible, and data-driven.</span>
+        </h1>
+        <div class="hero-cta">
+          <a href="/contact" class="btn btn-red">Start a conversation</a>
+          <a href="/why-fmp" class="btn btn-ghost">Why FMP</a>
+        </div>
+        <div class="route" aria-hidden="true">
+          <div class="stop fill"></div><div class="seg"></div><div class="stop"></div><div class="seg"></div>
+          <div class="stop"></div><div class="seg"></div><div class="stop"></div>
+        </div>
+        <div class="route-labels"><span>Warehouse</span><span>Route</span><span>Threshold</span><span>Room of choice</span></div>
+      </div>
+      <div class="hero-photo"><img src="/img/hero-truck.jpg" alt="Final Mile Providers branded delivery truck" /></div>
+    </div>
+  </section>
+
+  <LogoMarquee />
+
+  <div class="stats"><div class="wrap">
+    <div class="stat"><div class="n"><b>2</b>-man</div><div class="l">Dedicated white-glove crews</div></div>
+    <div class="stat"><div class="n">Multi-market</div><div class="l">Coverage across U.S. metros</div></div>
+    <div class="stat"><div class="n">Data-<b>driven</b></div><div class="l">Scorecard-based operations</div></div>
+    <div class="stat"><div class="n">Non-asset</div><div class="l">Flexible, scalable carrier network</div></div>
+  </div></div>
+
+  <section class="band"><div class="wrap"><div class="split">
+    <div>
+      <span class="eyebrow">Who we are</span>
+      <h2 class="disp" style="font-size:clamp(28px,4vw,40px);text-transform:uppercase;margin:14px 0 22px">Logistics experts, end&nbsp;to&nbsp;end</h2>
+      <p>Final Mile Providers LLC is a team of logistics experts dedicated to exceptional service in final-mile delivery. As a non-asset partner, we build customized, cost-effective solutions around each client's needs.</p>
+      <p>Every member brings senior leadership experience from globally recognized logistics companies — networks and track records that let us take on the most complex delivery challenges and protect your brand at the customer's door.</p>
+      <a href="/who-we-are" class="btn btn-dark" style="margin-top:8px">More about us</a>
+    </div>
+    <div class="photo"><img src="/img/team.jpg" alt="The Final Mile Providers team" /></div>
+  </div></div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Final Mile Providers</span>
+      <h2 class="disp">We don't just move packages — we engineer the last mile</h2>
+      <p>Strategic capabilities designed to transform your supply chain and protect your brand at the door.</p>
+    </div>
+    <div class="pillars">
+      {pillars.map(([i,t,d]) => (
+        <div class="pillar"><div class="idx">{i}</div><h3>{t}</h3><p>{d}</p></div>
+      ))}
+    </div>
+  </div></section>
+</Base>

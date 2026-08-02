@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+const values = [
+  ["Experienced leadership","Partners have held senior roles at globally recognized logistics companies."],
+  ["Customized solutions","Tailored logistics services built around each client's specific needs."],
+  ["Core values","Integrity, innovation, and customer-centricity are the foundation of the business."],
+  ["Technology-driven","We leverage advanced technology for efficient, transparent operations."],
+  ["Growth-oriented","We continually expand our reach, coverage, and capabilities."],
+  ["Talent-focused","We invest in attracting, developing, and retaining top talent."]
+];
+---
+<Base title="Who we are | Final Mile Providers LLC">
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow" style="color:var(--steel-lt)">Who we are</span>
+    <h1>Logistics experts, end to end</h1>
+    <p>A team of logistics experts dedicated to exceptional service and deep expertise in final-mile delivery. As a non-asset partner, we provide customized, cost-effective solutions that meet each client's unique needs.</p>
+  </div></section>
+
+  <section><div class="wrap"><div class="split">
+    <div class="prose">
+      <h2 class="disp" style="text-transform:uppercase;font-size:clamp(24px,3vw,34px);margin-bottom:18px">Our mission</h2>
+      <p>To revolutionize the final-mile experience with fast, flexible, reliable service that exceeds expectations — building long-term relationships based on trust, transparency, and a commitment to excellence.</p>
+      <h2 class="disp" style="text-transform:uppercase;font-size:clamp(24px,3vw,34px);margin:26px 0 18px">Our team</h2>
+      <p>Our team is comprised of experienced logistics professionals passionate about delivering exceptional service. From operations to customer service, every member is dedicated to a seamless, stress-free experience for our clients.</p>
+    </div>
+    <div class="photo"><img src="/img/team.jpg" alt="The Final Mile Providers team" /></div>
+  </div></div></section>
+
+  <section class="band"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Our values</span><h2 class="disp">What we stand for</h2></div>
+    <div class="values">
+      {values.map(([t,d]) => <div class="value"><div class="k">•</div><h3>{t}</h3><p>{d}</p></div>)}
+    </div>
+  </div></section>
+</Base>
