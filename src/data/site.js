@@ -26,4 +26,4 @@ export const brands = [
   { name: "Ashley HomeStore",    file: "ashley.png" },
   { name: "Mattress Warehouse",  file: "mattress-warehouse.png" }
 ];
-export const WEB3FORMS_KEY = "YOUR-WEB3FORMS-KEY";
+export const WEB3FORMS_KEY = "d24e769d-257c-49c1-9eab-332538a5144a";
