@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 <footer class="site">
   <div class="wrap">
     <div class="foot">
-      <a class="brand" href="/"><img src="/img/logo-white.png" alt="Final Mile Providers LLC" style="height:40px;opacity:.9" /></a>
+      <a class="brand" href="/"><img src="/img/logo-white.png" alt="Final Mile Providers LLC" style="height:44px;opacity:.9" /></a>
       <div class="fmenu">
         {nav.map(i => <a href={i.href}>{i.label}</a>)}
         <a href="/privacy">Privacy Policy</a>
@@ -17,3 +17,47 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+<style>
+  footer.site .wrap{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  footer.site .foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+    padding:44px 0 28px;
+    margin:0;
+  }
+  footer.site .fmenu{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  footer.site .cr{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    padding:20px 0 40px;
+    margin:0;
+    border-top:1px solid rgba(255,255,255,.12);
+    font-size:14px;
+    line-height:1.5;
+  }
+  @media (max-width:720px){
+    footer.site .foot{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:20px;
+    }
+    footer.site .cr{
+      flex-direction:column;
+      gap:6px;
+    }
+  }
+</style>
