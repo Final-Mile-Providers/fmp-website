@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 const values = [
-  ["Experienced leadership","Partners have held senior roles at globally recognized logistics companies."],
-  ["Customized solutions","Tailored logistics services built around each client's specific needs."],
-  ["Core values","Integrity, innovation, and customer-centricity are the foundation of the business."],
-  ["Technology-driven","We leverage advanced technology for efficient, transparent operations."],
-  ["Growth-oriented","We continually expand our reach, coverage, and capabilities."],
-  ["Talent-focused","We invest in attracting, developing, and retaining top talent."]
+  ["Experienced leadership","Partners have held senior roles at globally recognized logistics companies.","experienced-leadership.webp"],
+  ["Customized solutions","Tailored logistics services built around each client's specific needs.","customized-solutions.webp"],
+  ["Core values","Integrity, innovation, and customer-centricity are the foundation of the business.","core-values.webp"],
+  ["Technology-driven","We leverage advanced technology for efficient, transparent operations.","technology-driven.webp"],
+  ["Growth-oriented","We continually expand our reach, coverage, and capabilities.","growth-oriented.webp"],
+  ["Talent-focused","We invest in attracting, developing, and retaining top talent.","talent-focus.webp"]
 ];
 ---
 <Base title="Who we are | Final Mile Providers LLC">
@@ -31,7 +31,48 @@ const values = [
   <section class="band"><div class="wrap">
     <div class="sec-head"><span class="eyebrow">Our values</span><h2 class="disp">What we stand for</h2></div>
     <div class="values">
-      {values.map(([t,d]) => <div class="value"><div class="k">•</div><h3>{t}</h3><p>{d}</p></div>)}
+      {values.map(([t,d,img]) => (
+        <div class="value has-img">
+          <img src={`/img/${img}`} alt={t} loading="lazy" width="640" height="640" />
+          <h3>{t}</h3>
+          <p>{d}</p>
+        </div>
+      ))}
     </div>
   </div></section>
+
+  <style>
+    .value.has-img img{
+      width:100%;height:auto;display:block;
+      aspect-ratio:1/1;object-fit:cover;
+      border-radius:4px;margin-bottom:16px;
+    }
+    .value.has-img{
+      opacity:0;transform:translateY(24px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .value.has-img.visible{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){
+      .value.has-img{opacity:1;transform:none;transition:none}
+    }
+  </style>
+
+  <script is:inline>
+    (function(){
+      var items=document.querySelectorAll('.value.has-img');
+      if(!items.length)return;
+      if(!('IntersectionObserver' in window)){
+        items.forEach(function(el){el.classList.add('visible')});return;
+      }
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e,i){
+          if(e.isIntersecting){
+            setTimeout(function(){e.target.classList.add('visible')},i*110);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.15});
+      items.forEach(function(el){io.observe(el)});
+    })();
+  </script>
 </Base>
