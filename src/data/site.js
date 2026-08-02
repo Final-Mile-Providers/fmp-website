@@ -19,11 +19,12 @@ export const brands = [
   { name: "Restoration Hardware", file: "rh.png" },
   { name: "Wayfair",             file: "wayfair.png" },
   { name: "Living Spaces",       file: "living-spaces.png" },
-  { name: "Crate & Barrel",      file: "crate-barrel.png" },
-  { name: "Best Buy",            file: "best-buy.png" },
-  { name: "Williams-Sonoma",     file: "williams-sonoma.png" },
-  { name: "Arhaus",              file: "arhaus.png" },
+  //{ name: "Crate & Barrel",      file: "crate-barrel.png" },
+  //{ name: "Best Buy",            file: "best-buy.png" },
+  //{ name: "Williams-Sonoma",     file: "williams-sonoma.png" },
+  //{ name: "Arhaus",              file: "arhaus.png" },
   { name: "Ashley HomeStore",    file: "ashley.png" },
-  { name: "Mattress Warehouse",  file: "mattress-warehouse.png" }
+  { name: "Mattress Warehouse",  file: "mattress-warehouse.png" },
+  { name: "AJ Madison", file: "aj-madison.webp" }
 ];
 export const WEB3FORMS_KEY = "d24e769d-257c-49c1-9eab-332538a5144a";
