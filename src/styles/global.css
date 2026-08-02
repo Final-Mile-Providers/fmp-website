@@ -10,7 +10,8 @@ img{max-width:100%;display:block}
 .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#a50d26}
 .btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 .btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:var(--blue)}
-
+.menu a.btn-dark{color:#fff}
+.menu a.btn-dark:hover{color:#fff}
 /* header */
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
